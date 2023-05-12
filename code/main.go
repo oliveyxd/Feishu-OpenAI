@@ -19,7 +19,7 @@ import (
 var (
 	cfg = pflag.StringP("config", "c", "./config.yaml", "apiserver config file path.")
 )
-
+//添加注释,Branch=oliver0.5
 func main() {
 	initialization.InitRoleList()
 	pflag.Parse()
