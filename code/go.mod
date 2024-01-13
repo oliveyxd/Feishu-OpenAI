@@ -1,8 +1,14 @@
+//表示本项目的module模块名称是什么,别的模块依赖此模块的时候写这个名字
 module start-feishubot
 
+//表示使用GoSDK的哪个版本
 go 1.18
 
+//require中声明的是需要依赖的包和包版本号
+//格式如下： 需要import导入的模块名  版本号
 require github.com/larksuite/oapi-sdk-go/v3 v3.0.14
+//飞书开放接口SDK
+
 
 require (
 	github.com/duke-git/lancet/v2 v2.1.17
@@ -53,3 +59,14 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+//replace语句可以替换依赖项模块,表示如果项目中有引入前面的依赖模块，改为引用后面的依赖模块
+//可以用于golang的国外地址访问改为指向国内的github地址,当然你在上面require直接写github就不用在这里repalce了
+//replace (
+//	golang.org/x/crypto v0.0.0-20190313024323-a1f597ede03a =&gt; github.com/golang/crypto v0.0.0-20190313024323-a1f597ede03a
+//)
+
+//exclude语句可以忽略依赖项模块,表示在该项目中无论如何都使用不了该依赖模块，可以用于限制使用某个有bug版本的模块
+//exclude(
+//    github.com/ugorji/go v1.1.7 
+//)
